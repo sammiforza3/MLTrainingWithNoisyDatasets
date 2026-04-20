@@ -1,0 +1,19 @@
+cosa abbiamo fatto fino ad adesso
+
+
+
+- scaricato dataset dei funghi
+- fatto l'addestramento del decision tree
+- inziato a scrivere una semplice funzione per sporcare i dati
+
+
+ROBE DA FARE E DEFINIRE
+
+SPORCARE I DATI 
+    -abbiamo due macro metodologie
+        - aggiungere righe sporche
+        - modificare le righe esistenti per aggiungere rumore
+    - andiamo a sporcare i dataset in base alle feature e a una percentuale di righe da sporcare 
+    - cercare configurazioni interessanti di features/righe per evitare esplosione combinatoria
+        - prendere solo le feature ad alta correlazione con la classe
+    - plottare i dati 
