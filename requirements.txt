@@ -6,3 +6,6 @@ kagglehub
 tqdm
 ipywidgets
 keras
+ipython
+ipykernel
+tensorflow
