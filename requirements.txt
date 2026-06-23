@@ -8,4 +8,4 @@ ipywidgets
 keras
 ipython
 ipykernel
-tensorflow
+kagglehub
