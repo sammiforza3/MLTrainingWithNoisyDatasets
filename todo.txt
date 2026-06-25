@@ -10,6 +10,7 @@ cosa abbiamo fatto fino ad adesso
 ROBE DA FARE E DEFINIRE
 
     - liverdataset:
-        - sporcare solo train set
+        - sporcare solo train set (fatto)
         - fare epserimenti su come prendere le feature da sporcare 
             -  fare la mi solo su il training set
+            - sporcare sempre più features
