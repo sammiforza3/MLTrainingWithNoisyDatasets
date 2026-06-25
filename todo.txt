@@ -9,11 +9,7 @@ cosa abbiamo fatto fino ad adesso
 
 ROBE DA FARE E DEFINIRE
 
-SPORCARE I DATI 
-    -abbiamo due macro metodologie
-        - aggiungere righe sporche
-        - modificare le righe esistenti per aggiungere rumore
-    - andiamo a sporcare i dataset in base alle feature e a una percentuale di righe da sporcare 
-    - cercare configurazioni interessanti di features/righe per evitare esplosione combinatoria
-        - prendere solo le feature ad alta correlazione con la classe
-    - plottare i dati 
+    - liverdataset:
+        - sporcare solo train set
+        - fare epserimenti su come prendere le feature da sporcare 
+            -  fare la mi solo su il training set
