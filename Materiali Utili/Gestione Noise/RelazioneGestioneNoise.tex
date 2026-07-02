@@ -1,0 +1,317 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\geometry{margin=2.5cm}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+
+\title{Gestione del rumore nel Liver Patient Dataset}
+\author{}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Obiettivo dell'esperimento}
+
+L'esperimento misura quanto le prestazioni di un classificatore cambino quando una parte crescente del training set viene corrotta. Il rumore viene applicato esclusivamente alle feature del training set; validation set e test set rimangono puliti. Questa scelta simula una situazione nella quale i dati disponibili per l'addestramento contengono errori di misura, mentre la valutazione viene eseguita su osservazioni non corrotte.
+
+La percentuale di rumore assume i valori
+
+\[
+\rho \in \{0,0.1,0.2,\ldots,0.9,1\}.
+\]
+
+Il valore $\rho$ indica la frazione di righe modificate, non l'intensità della singola perturbazione. Per esempio, $\rho=0.8$ significa che viene selezionato l'80\% delle righe del training set per ciascuna feature analizzata.
+
+Il livello $\rho=0$ costituisce la baseline pulita. Il livello $\rho=1$ indica che tutte le righe vengono perturbate, ma non che l'informazione originale venga completamente eliminata.
+
+\section{Preparazione dei dati}
+
+\subsection{Suddivisione del dataset}
+
+Lo split viene eseguito una sola volta prima di scorrere i livelli di rumore. L'uso dello stesso split rende confrontabili i risultati ottenuti per valori differenti di $\rho$.
+
+Per la rete neurale viene usata la suddivisione:
+
+\begin{itemize}[noitemsep]
+    \item 30\% test set;
+    \item il restante 70\% viene ulteriormente diviso in training e validation;
+    \item con \texttt{validation\_size=0.2}, le proporzioni complessive sono circa 56\% training, 14\% validation e 30\% test.
+\end{itemize}
+
+Gli split sono stratificati, quindi mantengono approssimativamente la distribuzione delle classi. Il test set non viene usato per addestrare i modelli né per scegliere il numero di epoche.
+
+Negli esperimenti progressivi degli alberi è presente la stessa separazione train--validation--test: la configurazione viene scelta sul validation set e misurata successivamente sul test set. La SVM usa invece uno split train--test perché i suoi iperparametri sono attualmente fissati.
+
+\subsection{Significato del target}
+
+Nel preprocessing generale, \texttt{cat.codes} assegna normalmente:
+
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+Valore originale & Codice iniziale \\
+\midrule
+Liver Disease & 0 \\
+No Liver Disease & 1 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+All'interno degli esperimenti noise di rete neurale e SVM il target viene invertito localmente:
+
+\[
+y_{\text{noise}} = 1-y_{\text{encoded}}.
+\]
+
+Di conseguenza, durante questi test la classe positiva 1 rappresenta \emph{Liver Disease}, mentre la classe 0 rappresenta \emph{No Liver Disease}. La modifica è locale e non altera le sezioni precedenti del notebook.
+
+È importante riavviare il kernel ed eseguire le celle in ordine: un oggetto \texttt{df\_encoded} rimasto in memoria con una codifica precedente può invertire nuovamente il significato delle metriche.
+
+\section{Selezione dei gruppi di feature}
+
+Le feature vengono ordinate attraverso la Mutual Information rispetto al target. Negli esperimenti aggiornati, la Mutual Information viene calcolata esclusivamente sul training set:
+
+\[
+I(X_j;Y)=\sum_{x,y}p(x,y)\log\left(\frac{p(x,y)}{p(x)p(y)}\right).
+\]
+
+Le feature ordinate vengono divise in due gruppi:
+
+\begin{itemize}[noitemsep]
+    \item \texttt{migliori}: metà con Mutual Information più elevata;
+    \item \texttt{peggiori}: metà con Mutual Information più bassa.
+\end{itemize}
+
+Il calcolo sul solo training evita che test e validation influenzino la scelta delle feature da corrompere. I nomi presenti nelle variabili globali \texttt{migliori} e \texttt{peggiori} vengono quindi ignorati quando viene specificato il parametro \texttt{feature\_group}; il gruppo viene ricostruito dentro la funzione dell'esperimento.
+
+\section{Modalità di corruzione}
+
+\subsection{Feature continue}
+
+Per una feature continua $X_j$ vengono selezionate senza reinserimento
+
+\[
+n_{\rho}=\lfloor \rho n_{\text{train}}\rfloor
+\]
+
+righe. A ogni valore selezionato viene aggiunto rumore gaussiano:
+
+\[
+\widetilde{x}_{ij}=x_{ij}+\epsilon_{ij},
+\qquad
+\epsilon_{ij}\sim\mathcal{N}(0,\sigma_j^2),
+\]
+
+con
+
+\[
+\sigma_j=\lambda\,s_j.
+\]
+
+$s_j$ è la deviazione standard della feature nel training set e $\lambda$ è il parametro \texttt{noise\_level}, posto a 0.5 nelle chiamate correnti. Pertanto anche al 100\% di righe corrotte il valore originale rimane presente; viene aggiunta una perturbazione con deviazione standard pari a metà della deviazione standard della colonna. Non è quindi obbligatorio osservare un crollo delle metriche a $\rho=1$.
+
+\subsection{Feature categoriche}
+
+Per una feature categorica viene selezionata la frazione $\rho$ delle righe. Il valore di ciascuna riga selezionata viene sostituito con un valore estratto dalle altre categorie osservate nella stessa colonna. Il nuovo valore è sempre differente da quello originale, quando sono disponibili almeno due categorie.
+
+\subsection{Gestione dei seed}
+
+Ogni colonna usa un seed distinto. Nella rete neurale il seed dipende anche dalla ripetizione:
+
+\[
+s_{r,j}=s_0+1000r+j,
+\]
+
+dove $r$ identifica la ripetizione e $j$ la feature. Per una stessa coppia $(r,j)$ il seed non cambia tra i livelli di rumore. In questo modo:
+
+\begin{itemize}[noitemsep]
+    \item feature differenti non ricevono sequenze casuali identiche;
+    \item il confronto tra livelli di rumore è accoppiato e meno influenzato da variazioni casuali estranee;
+    \item ripetizioni differenti usano corruzioni indipendenti.
+\end{itemize}
+
+\section{Rete neurale}
+
+\subsection{Scaling}
+
+Dopo la corruzione viene costruito un \texttt{RobustScaler}. Lo scaler viene stimato esclusivamente sul training set relativo al livello corrente:
+
+\[
+z_{ij}=\frac{x_{ij}-\operatorname{mediana}(X_j)}{Q_{3,j}-Q_{1,j}}.
+\]
+
+Lo stesso scaler trasforma validation e test set. Non viene mai eseguito \texttt{fit} su validation o test, evitando data leakage. Il target non viene scalato, perché deve rimanere binario.
+
+\subsection{Gestione dello sbilanciamento}
+
+I pesi delle classi sono calcolati sul training set con la regola bilanciata di scikit-learn:
+
+\[
+w_c=\frac{n}{K n_c},
+\]
+
+dove $n$ è il numero totale di esempi, $K=2$ il numero di classi e $n_c$ il numero di osservazioni della classe $c$. I pesi vengono passati a \texttt{model.fit}; gli errori sulla classe meno frequente contribuiscono quindi maggiormente alla loss.
+
+Non viene effettuato undersampling. Il bootstrap mantiene mediamente lo sbilanciamento del campione originale, mentre \texttt{class\_weight} interviene nella funzione di costo.
+
+\subsection{Ensemble e addestramento}
+
+L'architettura contiene due livelli nascosti densi da 32 e 16 neuroni con attivazione ReLU e un neurone di output sigmoidale. Per ogni ripetizione vengono addestrate tre reti su campioni bootstrap del training set.
+
+Per il modello $k$ della ripetizione $r$ viene usato
+
+\[
+s_{r,k}=s_0+1000r+k.
+\]
+
+Il seed di uno stesso modello non dipende da $\rho$: inizializzazione e indici bootstrap rimangono confrontabili tra livelli di rumore. La validation loss viene controllata tramite \texttt{EarlyStopping}, con pazienza pari a 5 e ripristino dei pesi migliori.
+
+Se $p_{r,k}(x)$ è la probabilità prodotta dal modello $k$, la probabilità ensemble è
+
+\[
+\overline{p}_r(x)=\frac{1}{E}\sum_{k=1}^{E}p_{r,k}(x),
+\qquad E=3.
+\]
+
+La classe finale è
+
+\[
+\widehat{y}_r(x)=
+\begin{cases}
+1 & \text{se }\overline{p}_r(x)>0.5,\\
+0 & \text{altrimenti.}
+\end{cases}
+\]
+
+\section{Metriche}
+
+Indicando con TP, TN, FP e FN gli elementi della matrice di confusione, vengono calcolate:
+
+\begin{align*}
+\text{Accuracy} &= \frac{TP+TN}{TP+TN+FP+FN},\\
+\text{Recall}_1 &= \frac{TP}{TP+FN},\\
+\text{Precision}_1 &= \frac{TP}{TP+FP},\\
+F1_1 &= 2\frac{\text{Precision}_1\,\text{Recall}_1}
+{\text{Precision}_1+\text{Recall}_1},\\
+\text{Balanced Accuracy} &= \frac{1}{2}
+\left(\frac{TP}{TP+FN}+\frac{TN}{TN+FP}\right).
+\end{align*}
+
+Accuracy può risultare elevata anche quando la classe minoritaria viene riconosciuta male. Balanced accuracy attribuisce la stessa importanza alle due classi. Precision indica quanti dei pazienti classificati come malati sono effettivamente malati; recall indica quanti pazienti malati vengono riconosciuti. F1 rappresenta un compromesso tra precision e recall.
+
+\section{Media e deviazione standard}
+
+\subsection{Perché sono necessarie}
+
+L'addestramento della rete neurale è stocastico. Le prestazioni dipendono da inizializzazione dei pesi, bootstrap, ordine dei dati e realizzazione del rumore. Un singolo valore per livello non permette di distinguere l'effetto del rumore dalla variabilità casuale.
+
+Per questo motivo l'intero ensemble viene ripetuto $R=5$ volte per ogni livello $\rho$. Ogni ripetizione produce una metrica $m_{\rho,r}$, con $r=1,\ldots,R$.
+
+La media campionaria è
+
+\[
+\overline{m}_{\rho}=\frac{1}{R}\sum_{r=1}^{R}m_{\rho,r}.
+\]
+
+La deviazione standard campionaria è
+
+\[
+s_{\rho}=\sqrt{\frac{1}{R-1}
+\sum_{r=1}^{R}\left(m_{\rho,r}-\overline{m}_{\rho}\right)^2}.
+\]
+
+Nel codice viene usato \texttt{numpy.std(ddof=1)}, corrispondente al denominatore $R-1$. Se viene richiesta una sola ripetizione, la deviazione standard viene impostata a zero.
+
+Il DataFrame finale contiene, per esempio:
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Colonna & Significato \\
+\midrule
+\texttt{accuracy} & media dell'accuracy \\
+\texttt{accuracy\_std} & deviazione standard dell'accuracy \\
+\texttt{balanced\_accuracy} & media della balanced accuracy \\
+\texttt{balanced\_accuracy\_std} & relativa deviazione standard \\
+\texttt{f1\_class\_1} & media dell'F1 della classe positiva \\
+\texttt{f1\_class\_1\_std} & relativa deviazione standard \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Nel grafico il punto rappresenta $\overline{m}_{\rho}$ e la barra d'errore rappresenta $\overline{m}_{\rho}\pm s_{\rho}$. Le barre non sono intervalli di confidenza. Una deviazione standard elevata indica instabilità tra ripetizioni; barre sovrapposte suggeriscono che le differenze osservate potrebbero essere dovute alla variabilità, ma non costituiscono da sole un test statistico.
+
+Poiché tutte le ripetizioni usano lo stesso test set, la deviazione standard misura soprattutto la variabilità dovuta a rumore e addestramento. Non misura completamente l'incertezza dovuta alla scelta del campione di test. Per includere anche tale componente servirebbero split ripetuti o cross-validation esterna.
+
+\section{Decision Tree}
+
+Negli esperimenti noise degli alberi vengono provate diverse profondità, valori di \texttt{ccp\_alpha} e configurazioni di \texttt{class\_weight}. Ogni configurazione produce un ensemble di tre alberi. Ciascun albero viene addestrato sui due fold di training di una suddivisione stratificata a tre fold, cioè su circa il 66\% del training set.
+
+La configurazione migliore viene selezionata sul validation set secondo la metrica indicata, attualmente \texttt{f1\_class\_1}. Solo dopo la selezione l'ensemble viene valutato sul test set.
+
+Anche qui non viene effettuato undersampling: lo sbilanciamento viene gestito provando pesi differenti. La versione corrente restituisce un singolo risultato per livello di rumore; non calcola ancora media e deviazione standard su ripetizioni indipendenti.
+
+\section{Support Vector Machine}
+
+La SVM usa kernel RBF, $C=1$, \texttt{gamma=scale} e \texttt{class\_weight=balanced}. Per ciascun livello vengono costruiti tre modelli su campioni bootstrap. La predizione finale è ottenuta mediante voto di maggioranza sulle classi predette.
+
+Il \texttt{RobustScaler} viene stimato sul training corrotto e applicato al test pulito. Questo passaggio è essenziale per il kernel RBF, perché distanze e parametro gamma sono sensibili alla scala delle feature.
+
+Target, selezione tramite Mutual Information e seed distinti per colonna vengono gestiti localmente nella funzione noise. Come per gli alberi, la versione corrente produce un singolo valore per livello e non calcola ancora media e deviazione standard su più ensemble.
+
+\section{Interpretazione dei risultati}
+
+Non è necessario che le metriche diminuiscano monotonamente all'aumentare di $\rho$. Le ragioni principali sono:
+
+\begin{itemize}
+    \item il rumore continuo è additivo e non elimina completamente il segnale;
+    \item una perturbazione moderata può agire occasionalmente come regolarizzazione;
+    \item il dataset è piccolo e le stime hanno variabilità elevata;
+    \item scaling, pesi di classe ed ensemble possono ridurre la sensibilità alla corruzione;
+    \item differenze inferiori alla variabilità mostrata dalle barre d'errore non devono essere sovrainterpretate.
+\end{itemize}
+
+Prima di interpretare un grafico è opportuno verificare la distribuzione del target nel test set. Con la convenzione usata dagli esperimenti NN e SVM ci si aspetta circa il 71\% di classe 1. Precision, recall e accuracy devono essere compatibili con tale prevalenza; valori incompatibili indicano spesso che il kernel non è stato riavviato dopo una modifica della codifica.
+
+\section{Riproducibilità e procedura di esecuzione}
+
+Per ottenere risultati coerenti:
+
+\begin{enumerate}
+    \item riavviare il kernel Jupyter;
+    \item eseguire il notebook dall'inizio, senza saltare celle che definiscono funzioni;
+    \item eseguire la cella che definisce la funzione noise del modello;
+    \item eseguire separatamente il gruppo \texttt{peggiori} e il gruppo \texttt{migliori};
+    \item salvare DataFrame, grafici e configurazione dei seed;
+    \item aggiornare tabelle e figure della relazione, evitando di riutilizzare output prodotti da versioni precedenti del codice.
+\end{enumerate}
+
+Con $R=5$, $E=3$ e 11 livelli di rumore, un singolo gruppo della rete neurale richiede
+
+\[
+5\times 3\times 11=165
+\]
+
+addestramenti. L'esecuzione di entrambi i gruppi richiede 330 addestramenti. Questo costo è la conseguenza necessaria della stima della variabilità tramite ripetizioni.
+
+\section{Conclusioni}
+
+Il test noise confronta modelli addestrati su versioni progressivamente corrotte dello stesso training set e valutati su dati puliti. La validità del confronto dipende da quattro condizioni: assenza di leakage, codifica coerente del target, scaling stimato solo sul training e controllo delle sorgenti di casualità.
+
+Per la rete neurale, media e deviazione standard forniscono un risultato più affidabile del singolo esperimento. La media descrive la prestazione tipica, mentre la deviazione standard quantifica la stabilità rispetto alle realizzazioni casuali. Un eventuale miglioramento a livelli elevati di rumore deve essere considerato significativo solo se è ripetibile e sufficientemente grande rispetto alla variabilità osservata.
+
+\end{document}
