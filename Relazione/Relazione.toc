@@ -1,29 +1,29 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
-\contentsline {section}{\numberline {1}Introduzione}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Datasets}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Modelli ML}{4}{subsection.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1}Decision Tree}{4}{subsubsection.1.2.1}%
-\contentsline {subsubsection}{\numberline {1.2.2}Neural Network}{4}{subsubsection.1.2.2}%
-\contentsline {subsubsection}{\numberline {1.2.3}SVM}{5}{subsubsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.3}Noise injection}{6}{subsection.1.3}%
-\contentsline {section}{\numberline {2}Liver Patient Dataset}{7}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Descrizione dataset}{7}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Risultati}{8}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Decision Tree}{8}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Neural Network}{10}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}SVM}{13}{subsubsection.2.2.3}%
-\contentsline {section}{\numberline {3}Teen Mental Health Dataset}{17}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Descrizione dataset}{17}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Risultati}{18}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Decision Tree}{19}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Neural Network}{21}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}SVM}{23}{subsubsection.3.2.3}%
-\contentsline {section}{\numberline {4}Adult Income Dataset}{25}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Descrizione dataset}{25}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Risultati}{26}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Decision Tree}{26}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Neural Network}{29}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}SVM}{32}{subsubsection.4.2.3}%
-\contentsline {section}{\numberline {5}Confronto dati}{36}{section.5}%
-\contentsline {section}{\numberline {6}Conclusioni}{36}{section.6}%
+\contentsline {section}{\numberline {1}Obiettivo del progetto}{3}{section.1}%
+\contentsline {section}{\numberline {2}Correzioni metodologiche comuni}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Separazione tra training, validation e test}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Metriche}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Ensemble di Decision Tree}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Rete neurale}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Support Vector Machine}{4}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Generazione e controllo del rumore}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Feature categoriche one-hot}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Feature continue}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Feature intere e ordinali}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Selezione delle feature da corrompere}{5}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Teen Mental Health Dataset}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Dati e target}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Preprocessing}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Flusso sperimentale}{6}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Correzioni specifiche}{6}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Adult Income Dataset}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Dati e target}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Preprocessing}{7}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Flusso sperimentale e correzioni}{7}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Liver Patient Dataset}{7}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Dati e target}{7}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Preprocessing e rumore}{7}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Coerenza del target e validazione}{8}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Riproducibilità e interpretazione dei risultati}{8}{section.7}%
+\contentsline {section}{\numberline {8}Conclusioni}{8}{section.8}%
