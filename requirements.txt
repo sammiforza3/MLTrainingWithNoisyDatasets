@@ -1,12 +1,12 @@
+numpy
 pandas
 matplotlib
 seaborn
 scikit-learn
-kagglehub
 tqdm
-ipywidgets
+kagglehub
+tensorflow
 keras
 ipython
 ipykernel
-kagglehub
-tensorflow
+ipywidgets
