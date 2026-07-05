@@ -1,0 +1,708 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.1.7)  5 JUL 2026 16:17
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"/home/samuele/Progetti/Progetto Architettura/MLTrainingWithNoisyDatasets/Relazione/main.tex"
+(/home/samuele/Progetti/Progetto Architettura/MLTrainingWithNoisyDatasets/Relazione/main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@section=\count188
+\c@subsection=\count189
+\c@subsubsection=\count190
+\c@paragraph=\count191
+\c@subparagraph=\count192
+\c@figure=\count193
+\c@table=\count194
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen141
+\Gin@req@width=\dimen142
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen143
+\captionmargin=\dimen144
+\caption@leftmargin=\dimen145
+\caption@rightmargin=\dimen146
+\caption@width=\dimen147
+\caption@indent=\dimen148
+\caption@parindent=\dimen149
+\caption@hangindent=\dimen150
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count195
+\c@continuedfloat=\count196
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count197
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count198
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+ (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+) (/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+ (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count199
+) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count266
+)
+\@linkdim=\dimen151
+\Hy@linkcounter=\count267
+\Hy@pagecounter=\count268
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count269
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count270
+ (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4784.
+\XeTeXLinkMargin=\dimen152
+ (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count271
+\Field@Width=\dimen153
+\Fld@charsize=\dimen154
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring OFF on input line 6083.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count272
+\c@Item=\count273
+\c@Hfootnote=\count274
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
+ (/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count275
+\c@bookmark@seq@number=\count276
+ (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip50
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count277
+\float@exts=\toks18
+\float@box=\box51
+\@float@everytoks=\toks19
+\@floatcapt=\box52
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks20
+\ex@=\dimen155
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen156
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count278
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count279
+\leftroot@=\count280
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count281
+\DOTSCASE@=\count282
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen157
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count283
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count284
+\dotsspace@=\muskip17
+\c@parentequation=\count285
+\dspbrk@lvl=\count286
+\tag@help=\toks21
+\row@=\count287
+\column@=\count288
+\maxfields@=\count289
+\andhelp@=\toks22
+\eqnshift@=\dimen158
+\alignsep@=\dimen159
+\tagshift@=\dimen160
+\tagwidth@=\dimen161
+\totwidth@=\dimen162
+\lineht@=\dimen163
+\@envbody=\toks23
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2024/01/07 v24.1 The Babel package
+\babel@savecnt=\count290
+\U@D=\dimen164
+\l@unhyphenated=\language6
+ (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count291
+ (/usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf
+Language: italian 2024/01/03 v.1.5.00 Italian support for the babel system
+\it@lettering=\count292
+\it@doublequoteactive=\count293
+\it@ISOcompliance=\count294
+)) (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex
+Package babel Info: Importing font and identification data for italian
+(babel)             from babel-it.ini. Reported on input line 11.
+) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count295
+\l__pdf_internal_box=\box55
+) (./main.aux
+
+LaTeX Warning: Label `tab:prestazioni_feature_migliori' multiply defined.
+
+
+LaTeX Warning: Label `tab:prestazioni_feature_peggiori' multiply defined.
+
+
+LaTeX Warning: Label `tab:prestazioni_feature_migliori' multiply defined.
+
+
+LaTeX Warning: Label `tab:prestazioni_feature_peggiori' multiply defined.
+
+
+LaTeX Warning: Label `tab:prestazioni_feature_migliori' multiply defined.
+
+
+LaTeX Warning: Label `fig:img1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:img1' multiply defined.
+
+
+LaTeX Warning: Label `fig:img2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:img2' multiply defined.
+
+
+LaTeX Warning: Label `fig:due_immagini' multiply defined.
+
+
+LaTeX Warning: Label `fig:img1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:img1' multiply defined.
+
+
+LaTeX Warning: Label `fig:img2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:img2' multiply defined.
+
+
+LaTeX Warning: Label `fig:due_immagini' multiply defined.
+
+
+LaTeX Warning: Label `fig:img1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:img1' multiply defined.
+
+
+LaTeX Warning: Label `fig:img2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:img2' multiply defined.
+
+
+LaTeX Warning: Label `fig:due_immagini_2' multiply defined.
+
+
+LaTeX Warning: Label `fig:confronto' multiply defined.
+
+
+LaTeX Warning: Label `fig:due_immagini' multiply defined.
+
+)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count296
+\scratchdimen=\dimen165
+\scratchbox=\box56
+\nofMPsegments=\count297
+\nofMParguments=\count298
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count299
+\MPscratchDim=\dimen166
+\MPnumerator=\count300
+\makeMPintoPDFobject=\count301
+\everyMPtoPDFconversion=\toks26
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring OFF on input line 29.
+ (./main.out) (./main.out)
+\@outlinefile=\write3
+\openout3 = `main.out'.
+
+LaTeX Info: Redefining \it@ocap on input line 29.
+LaTeX Info: Redefining \it@ccap on input line 29.
+
+
+File italian.ldf warning: 
+italian.ldf    With OT1 encoding guillemets are poorly faked
+italian.ldf    Use T1 encoding
+italian.ldf    or specify a font with command \CaporaliFrom
+italian.ldf    See the documentation concerning the babel-italian typesetting
+italian.ldf    on input line 29.
+
+<Immagini/Logo bicocca.jpg, id=116, 250.9375pt x 245.91875pt>
+File: Immagini/Logo bicocca.jpg Graphic file (type jpg)
+<use Immagini/Logo bicocca.jpg>
+Package pdftex.def Info: Immagini/Logo bicocca.jpg  used on input line 32.
+(pdftex.def)             Requested size: 170.71652pt x 167.30882pt.
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Immagini/Logo bicocca.jpg>] (./main.toc)
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 89--91
+
+ []
+
+[4{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [5] [6]
+Overfull \hbox (0.8631pt too wide) in paragraph at lines 151--155
+\OT1/cmr/m/n/10 zan-do la clas-se \OT1/cmtt/m/n/10 SVC\OT1/cmr/m/n/10 . Il mo-del-lo ^^Re sta-to con-fi-gu-ra-to con il pa-ra-me-tro \OT1/cmtt/m/n/10 class[]weight
+ []
+
+[7]
+<Immagini/Liver/distribuzioneTargetLiver.png, id=199, 413.3844pt x 328.1058pt>
+File: Immagini/Liver/distribuzioneTargetLiver.png Graphic file (type png)
+<use Immagini/Liver/distribuzioneTargetLiver.png>
+Package pdftex.def Info: Immagini/Liver/distribuzioneTargetLiver.png  used on input line 200.
+(pdftex.def)             Requested size: 241.49895pt x 191.67827pt.
+<Immagini/Liver/MILiver.png, id=201, 539.1342pt x 381.5856pt>
+File: Immagini/Liver/MILiver.png Graphic file (type png)
+<use Immagini/Liver/MILiver.png>
+Package pdftex.def Info: Immagini/Liver/MILiver.png  used on input line 208.
+(pdftex.def)             Requested size: 345.0pt x 244.18483pt.
+ [8 <./Immagini/Liver/distribuzioneTargetLiver.png>] [9 <./Immagini/Liver/MILiver.png>]
+<Immagini/Liver/RobustezzaEnsemble.png, id=215, 629.4717pt x 395.3169pt>
+File: Immagini/Liver/RobustezzaEnsemble.png Graphic file (type png)
+<use Immagini/Liver/RobustezzaEnsemble.png>
+Package pdftex.def Info: Immagini/Liver/RobustezzaEnsemble.png  used on input line 228.
+(pdftex.def)             Requested size: 345.0pt x 216.66492pt.
+<Immagini/Liver/RobustezzaEnsembleMigliori.png, id=216, 611.4042pt x 395.3169pt>
+File: Immagini/Liver/RobustezzaEnsembleMigliori.png Graphic file (type png)
+<use Immagini/Liver/RobustezzaEnsembleMigliori.png>
+Package pdftex.def Info: Immagini/Liver/RobustezzaEnsembleMigliori.png  used on input line 257.
+(pdftex.def)             Requested size: 345.0pt x 223.07698pt.
+ [10 <./Immagini/Liver/Robustezzaensemble.png>] [11 <./Immagini/Liver/RobustezzaensembleMigliori.png>]
+<Immagini/Liver/RobustezzaNNEnsemble.png, id=231, 611.4042pt x 395.3169pt>
+File: Immagini/Liver/RobustezzaNNEnsemble.png Graphic file (type png)
+<use Immagini/Liver/RobustezzaNNEnsemble.png>
+Package pdftex.def Info: Immagini/Liver/RobustezzaNNEnsemble.png  used on input line 289.
+(pdftex.def)             Requested size: 345.0pt x 223.07698pt.
+
+Overfull \hbox (4.20854pt too wide) in paragraph at lines 296--313
+ [][] 
+ []
+
+<Immagini/Liver/RobustezzaNNEnsembleMigliori.png, id=232, 611.4042pt x 395.3169pt>
+File: Immagini/Liver/RobustezzaNNEnsembleMigliori.png Graphic file (type png)
+<use Immagini/Liver/RobustezzaNNEnsembleMigliori.png>
+Package pdftex.def Info: Immagini/Liver/RobustezzaNNEnsembleMigliori.png  used on input line 319.
+(pdftex.def)             Requested size: 345.0pt x 223.07698pt.
+[12 <./Immagini/Liver/RobustezzaNNensemble.png>]
+Overfull \hbox (4.20854pt too wide) in paragraph at lines 326--343
+ [][] 
+ []
+
+<Immagini/Liver/RobustezzaSVMEnsemble.png, id=240, 613.5723pt x 395.3169pt>
+File: Immagini/Liver/RobustezzaSVMEnsemble.png Graphic file (type png)
+<use Immagini/Liver/RobustezzaSVMEnsemble.png>
+Package pdftex.def Info: Immagini/Liver/RobustezzaSVMEnsemble.png  used on input line 354.
+(pdftex.def)             Requested size: 345.0pt x 222.28075pt.
+[13 <./Immagini/Liver/RobustezzaNNensembleMigliori.png>]
+<Immagini/Liver/RobustezzaSVMEnsembleMigliori.png, id=249, 611.4042pt x 395.3169pt>
+File: Immagini/Liver/RobustezzaSVMEnsembleMigliori.png Graphic file (type png)
+<use Immagini/Liver/RobustezzaSVMEnsembleMigliori.png>
+Package pdftex.def Info: Immagini/Liver/RobustezzaSVMEnsembleMigliori.png  used on input line 384.
+(pdftex.def)             Requested size: 345.0pt x 223.07698pt.
+ [14 <./Immagini/Liver/RobustezzaSVMEnsemble.png>] [15 <./Immagini/Liver/RobustezzaSVMEnsembleMigliori.png>]
+Overfull \hbox (21.88408pt too wide) in paragraph at lines 428--446
+ [][] 
+ []
+
+<Immagini/Teen/DistribuzioneTargetTeen.png, id=264, 419.166pt x 328.8285pt>
+File: Immagini/Teen/DistribuzioneTargetTeen.png Graphic file (type png)
+<use Immagini/Teen/DistribuzioneTargetTeen.png>
+Package pdftex.def Info: Immagini/Teen/DistribuzioneTargetTeen.png  used on input line 452.
+(pdftex.def)             Requested size: 241.49895pt x 189.45123pt.
+[16 <./Immagini/Teen/DistribuzioneTargetTeen.png>]
+<Immagini/Teen/MITeen.png, id=272, 613.5723pt x 381.5856pt>
+File: Immagini/Teen/MITeen.png Graphic file (type png)
+<use Immagini/Teen/MITeen.png>
+Package pdftex.def Info: Immagini/Teen/MITeen.png  used on input line 462.
+(pdftex.def)             Requested size: 345.0pt x 214.55984pt.
+
+Overfull \hbox (23.50323pt too wide) in paragraph at lines 472--473
+[]\OT1/cmr/bx/n/10 Migliori\OT1/cmr/m/n/10 :['sleep[]hours', 'stress[]level', 'dai-ly[]social[]media[]hours', 'a-n-xie-ty[]level',
+ []
+
+[17 <./Immagini/Teen/MITeen.png>]
+<Immagini/Teen/RobustezzaEnsamble1teen.png, id=279, 650.43pt x 395.3169pt>
+File: Immagini/Teen/RobustezzaEnsamble1teen.png Graphic file (type png)
+<use Immagini/Teen/RobustezzaEnsamble1teen.png>
+Package pdftex.def Info: Immagini/Teen/RobustezzaEnsamble1teen.png  used on input line 484.
+(pdftex.def)             Requested size: 345.0pt x 209.68584pt.
+
+Overfull \hbox (4.20854pt too wide) in paragraph at lines 493--510
+ [][] 
+ []
+
+<Immagini/Teen/RobustezzaEnsamble2teen.png, id=280, 650.43pt x 395.3169pt>
+File: Immagini/Teen/RobustezzaEnsamble2teen.png Graphic file (type png)
+<use Immagini/Teen/RobustezzaEnsamble2teen.png>
+Package pdftex.def Info: Immagini/Teen/RobustezzaEnsamble2teen.png  used on input line 517.
+(pdftex.def)             Requested size: 345.0pt x 209.68584pt.
+[18 <./Immagini/Teen/RobustezzaEnsamble1teen.png>]
+Overfull \hbox (4.20854pt too wide) in paragraph at lines 526--543
+ [][] 
+ []
+
+<Immagini/Teen/RobustezzaNNEnsembleTeen.png, id=288, 650.43pt x 395.3169pt>
+File: Immagini/Teen/RobustezzaNNEnsembleTeen.png Graphic file (type png)
+<use Immagini/Teen/RobustezzaNNEnsembleTeen.png>
+Package pdftex.def Info: Immagini/Teen/RobustezzaNNEnsembleTeen.png  used on input line 553.
+(pdftex.def)             Requested size: 345.0pt x 209.68584pt.
+[19 <./Immagini/Teen/RobustezzaEnsamble2teen.png>]
+<Immagini/Teen/RobustezzaNN2EnsembleTeen.png, id=297, 650.43pt x 395.3169pt>
+File: Immagini/Teen/RobustezzaNN2EnsembleTeen.png Graphic file (type png)
+<use Immagini/Teen/RobustezzaNN2EnsembleTeen.png>
+Package pdftex.def Info: Immagini/Teen/RobustezzaNN2EnsembleTeen.png  used on input line 584.
+(pdftex.def)             Requested size: 345.0pt x 209.68584pt.
+ [20 <./Immagini/Teen/RobustezzaNNEnsembleTeen.png>]
+Overfull \hbox (4.20854pt too wide) in paragraph at lines 591--608
+ [][] 
+ []
+
+<Immagini/Teen/RobustezzaSVMEnsemble1.png, id=305, 650.43pt x 395.3169pt>
+File: Immagini/Teen/RobustezzaSVMEnsemble1.png Graphic file (type png)
+<use Immagini/Teen/RobustezzaSVMEnsemble1.png>
+Package pdftex.def Info: Immagini/Teen/RobustezzaSVMEnsemble1.png  used on input line 619.
+(pdftex.def)             Requested size: 345.0pt x 209.68584pt.
+[21 <./Immagini/Teen/RobustezzaNN2EnsembleTeen.png>]
+Overfull \hbox (4.20854pt too wide) in paragraph at lines 626--643
+ [][] 
+ []
+
+<Immagini/Teen/RobustezzaSVMEnsemble2.png, id=314, 650.43pt x 395.3169pt>
+File: Immagini/Teen/RobustezzaSVMEnsemble2.png Graphic file (type png)
+<use Immagini/Teen/RobustezzaSVMEnsemble2.png>
+Package pdftex.def Info: Immagini/Teen/RobustezzaSVMEnsemble2.png  used on input line 651.
+(pdftex.def)             Requested size: 345.0pt x 209.68584pt.
+[22 <./Immagini/Teen/RobustezzaSVMEnsemble1.png>]
+Overfull \hbox (4.20854pt too wide) in paragraph at lines 658--675
+ [][] 
+ []
+
+[23 <./Immagini/Teen/RobustezzaSVMEnsemble2.png>]
+<Immagini/Adult/DistribuzioneTargetAdult.png, id=329, 425.6703pt x 328.8285pt>
+File: Immagini/Adult/DistribuzioneTargetAdult.png Graphic file (type png)
+<use Immagini/Adult/DistribuzioneTargetAdult.png>
+Package pdftex.def Info: Immagini/Adult/DistribuzioneTargetAdult.png  used on input line 718.
+(pdftex.def)             Requested size: 224.2479pt x 173.23463pt.
+ [24 <./Immagini/Adult/DistribuzioneTargetAdult.png>]
+<Immagini/Adult/MIAdult.png, id=337, 578.16pt x 381.5856pt>
+File: Immagini/Adult/MIAdult.png Graphic file (type png)
+<use Immagini/Adult/MIAdult.png>
+Package pdftex.def Info: Immagini/Adult/MIAdult.png  used on input line 726.
+(pdftex.def)             Requested size: 345.0pt x 227.69545pt.
+
+Overfull \hbox (6.5977pt too wide) in paragraph at lines 739--740
+[]\OT1/cmr/bx/n/10 Migliori\OT1/cmr/m/n/10 : ['re-la-tion-ship', 'marital-status', 'capital-gain', 'a-ge', 'educational-
+ []
+
+<Immagini/Adult/RobustezzaEnsemblePeggiori.jpeg, id=338, 872.25874pt x 524.96124pt>
+File: Immagini/Adult/RobustezzaEnsemblePeggiori.jpeg Graphic file (type jpg)
+<use Immagini/Adult/RobustezzaEnsemblePeggiori.jpeg>
+Package pdftex.def Info: Immagini/Adult/RobustezzaEnsemblePeggiori.jpeg  used on input line 745.
+(pdftex.def)             Requested size: 345.0pt x 207.63377pt.
+[25 <./Immagini/Adult/MIAdult.png>]
+<Immagini/Adult/RobustezzaEnsembleMigliori.jpeg, id=346, 874.26625pt x 524.96124pt>
+File: Immagini/Adult/RobustezzaEnsembleMigliori.jpeg Graphic file (type jpg)
+<use Immagini/Adult/RobustezzaEnsembleMigliori.jpeg>
+Package pdftex.def Info: Immagini/Adult/RobustezzaEnsembleMigliori.jpeg  used on input line 774.
+(pdftex.def)             Requested size: 345.0pt x 207.16116pt.
+ [26 <./Immagini/Adult/RobustezzaEnsemblePeggiori.jpeg>]
+<Immagini/Adult/RobustezzaNNPeggiori.jpeg, id=353, 965.6075pt x 522.95375pt>
+File: Immagini/Adult/RobustezzaNNPeggiori.jpeg Graphic file (type jpg)
+<use Immagini/Adult/RobustezzaNNPeggiori.jpeg>
+Package pdftex.def Info: Immagini/Adult/RobustezzaNNPeggiori.jpeg  used on input line 806.
+(pdftex.def)             Requested size: 345.0pt x 186.84283pt.
+ [27 <./Immagini/Adult/RobustezzaEnsembleMigliori.jpeg>]
+<Immagini/Adult/RobustezzaNNMigliori.jpeg, id=360, 902.37125pt x 526.96875pt>
+File: Immagini/Adult/RobustezzaNNMigliori.jpeg Graphic file (type jpg)
+<use Immagini/Adult/RobustezzaNNMigliori.jpeg>
+Package pdftex.def Info: Immagini/Adult/RobustezzaNNMigliori.jpeg  used on input line 835.
+(pdftex.def)             Requested size: 345.0pt x 201.47241pt.
+ [28 <./Immagini/Adult/RobustezzaNNPeggiori.jpeg>]
+<Immagini/Adult/RobustezzaSVMPeggiori.png, id=367, 903.375pt x 549.05125pt>
+File: Immagini/Adult/RobustezzaSVMPeggiori.png Graphic file (type png)
+<use Immagini/Adult/RobustezzaSVMPeggiori.png>
+Package pdftex.def Info: Immagini/Adult/RobustezzaSVMPeggiori.png  used on input line 866.
+(pdftex.def)             Requested size: 345.0pt x 209.68887pt.
+ [29 <./Immagini/Adult/RobustezzaNNMigliori.jpeg>]
+Overfull \hbox (4.20854pt too wide) in paragraph at lines 873--890
+ [][] 
+ []
+
+<Immagini/Adult/RobustezzaSVMMigliori.png, id=374, 903.375pt x 549.05125pt>
+File: Immagini/Adult/RobustezzaSVMMigliori.png Graphic file (type png)
+<use Immagini/Adult/RobustezzaSVMMigliori.png>
+Package pdftex.def Info: Immagini/Adult/RobustezzaSVMMigliori.png  used on input line 895.
+(pdftex.def)             Requested size: 345.0pt x 209.68887pt.
+[30 <./Immagini/Adult/RobustezzaSVMPeggiori.png>]
+Overfull \hbox (4.20854pt too wide) in paragraph at lines 902--919
+ [][] 
+ []
+
+[31 <./Immagini/Adult/RobustezzaSVMMigliori.png>]
+<Immagini/Confronto/AID-NN.png, id=388, 409.7709pt x 328.8285pt>
+File: Immagini/Confronto/AID-NN.png Graphic file (type png)
+<use Immagini/Confronto/AID-NN.png>
+Package pdftex.def Info: Immagini/Confronto/AID-NN.png  used on input line 934.
+(pdftex.def)             Requested size: 165.59853pt x 132.88881pt.
+<Immagini/Confronto/AID-SVM.png, id=389, 409.7709pt x 328.8285pt>
+File: Immagini/Confronto/AID-SVM.png Graphic file (type png)
+<use Immagini/Confronto/AID-SVM.png>
+Package pdftex.def Info: Immagini/Confronto/AID-SVM.png  used on input line 940.
+(pdftex.def)             Requested size: 165.59853pt x 132.88881pt.
+<Immagini/Confronto/LPD-DT.png, id=390, 409.7709pt x 328.8285pt>
+File: Immagini/Confronto/LPD-DT.png Graphic file (type png)
+<use Immagini/Confronto/LPD-DT.png>
+Package pdftex.def Info: Immagini/Confronto/LPD-DT.png  used on input line 951.
+(pdftex.def)             Requested size: 165.59853pt x 132.88881pt.
+<Immagini/Confronto/TMHD-DT.png, id=391, 420.6114pt x 328.8285pt>
+File: Immagini/Confronto/TMHD-DT.png Graphic file (type png)
+<use Immagini/Confronto/TMHD-DT.png>
+Package pdftex.def Info: Immagini/Confronto/TMHD-DT.png  used on input line 957.
+(pdftex.def)             Requested size: 170.77332pt x 133.50597pt.
+ [32 <./Immagini/Confronto/AID-NN.png> <./Immagini/Confronto/AID-SVM.png> <./Immagini/Confronto/LPD-DT.png> <./Immagini/Confronto/TMHD-DT.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 966--967
+
+ []
+
+<Immagini/Confronto/Liver.png, id=402, 409.7709pt x 328.8285pt>
+File: Immagini/Confronto/Liver.png Graphic file (type png)
+<use Immagini/Confronto/Liver.png>
+Package pdftex.def Info: Immagini/Confronto/Liver.png  used on input line 975.
+(pdftex.def)             Requested size: 165.59853pt x 132.88881pt.
+<Immagini/Confronto/Teen.png, id=403, 409.7709pt x 328.8285pt>
+File: Immagini/Confronto/Teen.png Graphic file (type png)
+<use Immagini/Confronto/Teen.png>
+Package pdftex.def Info: Immagini/Confronto/Teen.png  used on input line 981.
+(pdftex.def)             Requested size: 165.59853pt x 132.88881pt.
+<Immagini/Confronto/Adult.png, id=404, 409.7709pt x 328.8285pt>
+File: Immagini/Confronto/Adult.png Graphic file (type png)
+<use Immagini/Confronto/Adult.png>
+Package pdftex.def Info: Immagini/Confronto/Adult.png  used on input line 989.
+(pdftex.def)             Requested size: 172.5pt x 138.42313pt.
+[33 <./Immagini/Confronto/Liver.png> <./Immagini/Confronto/Teen.png> <./Immagini/Confronto/Adult.png>]
+<Immagini/Confronto/DT.png, id=414, 409.7709pt x 328.8285pt>
+File: Immagini/Confronto/DT.png Graphic file (type png)
+<use Immagini/Confronto/DT.png>
+Package pdftex.def Info: Immagini/Confronto/DT.png  used on input line 1009.
+(pdftex.def)             Requested size: 165.59853pt x 132.88881pt.
+<Immagini/Confronto/NN.png, id=415, 409.7709pt x 328.8285pt>
+File: Immagini/Confronto/NN.png Graphic file (type png)
+<use Immagini/Confronto/NN.png>
+Package pdftex.def Info: Immagini/Confronto/NN.png  used on input line 1015.
+(pdftex.def)             Requested size: 165.59853pt x 132.88881pt.
+<Immagini/Confronto/SVM.png, id=416, 409.7709pt x 328.8285pt>
+File: Immagini/Confronto/SVM.png Graphic file (type png)
+<use Immagini/Confronto/SVM.png>
+Package pdftex.def Info: Immagini/Confronto/SVM.png  used on input line 1023.
+(pdftex.def)             Requested size: 172.5pt x 138.42313pt.
+ [34 <./Immagini/Confronto/DT.png> <./Immagini/Confronto/NN.png> <./Immagini/Confronto/SVM.png>] [35] (./main.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 6D809D215FFB8F9D1476B912074E1C0D;3520.
+ ) 
+Here is how much of TeX's memory you used:
+ 12122 strings out of 476171
+ 202250 string characters out of 5795120
+ 1936975 words of memory out of 5000000
+ 33874 multiletter control sequences out of 15000+600000
+ 566082 words of font info for 65 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 75i,11n,79p,816b,478s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{https://www.kaggle.com/} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{https://www.researchgate.net/profile/Arun-Saseendran-2/publication/331024938_Impact_of_Noise_in_Dataset_on_Machine_Learning_Algorithms/links/5c61eff8a6fdccb608bba512/Impact-of-Noise-in-Dataset-on-Machine-Learning-Algorithms.pdf} has been referenced but does not exist, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on main.pdf (35 pages, 1430147 bytes).
+PDF statistics:
+ 525 PDF objects out of 1000 (max. 8388607)
+ 393 compressed objects within 4 object streams
+ 127 named destinations out of 1000 (max. 500000)
+ 400 words of extra memory for PDF output out of 10000 (max. 10000000)
+

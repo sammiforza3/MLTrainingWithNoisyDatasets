@@ -37,17 +37,18 @@
 \section{Introduzione}
 
 Il nostro progetto tratta di come l'aggiunta di rumore nei dataset influisca sulle performance dei modelli di Machine Learning, prendendo come spunto principale per l’idea il paper “Impact of Noise in Dataset on Machine Learning Algorithms” (Saseendran, Arun Thundyill, et al, Mach. Learn. Res 1 (2019): 1-8) \hyperlink{https://www.researchgate.net/profile/Arun-Saseendran-2/publication/331024938_Impact_of_Noise_in_Dataset_on_Machine_Learning_Algorithms/links/5c61eff8a6fdccb608bba512/Impact-of-Noise-in-Dataset-on-Machine-Learning-Algorithms.pdf}{(repribile qui)}.\\
-L’obiettivo principale consiste nel verificare e giustificare le differenze tra i risultati ottenuti sui dataset originali e sui dataset sporcati. \\
-Per fare ciò, analizziamo 3 dataset distinti, li sporcheremo, e successivamente per ognuno addestreremo 3 diversi modelli: in questo modo, potremo poi confrontare i vari risultati.
+L’obiettivo principale consiste nel verificare le differenze tra i risultati ottenuti sui dataset originali e sui dataset sporcati. \\
+Per fare ciò, analizziamo 3 dataset distinti, li sporcheremo e addestreremo 3 diversi modelli: in questo modo, potremo poi confrontare i vari risultati.
 
 \subsection{Datasets}
 
 Per questo progetto sono stati scelti tre dataset, reperibili su \hyperlink{https://www.kaggle.com/}{Kaggle}.\\
-L'analisi viene ripetuta su tre dataset con caratteristiche molto diverse:
+Questi hanno caratteristiche molto diverse:
 \begin{enumerate}
+    \item \textbf{Liver Patient Dataset}, piccolo, clinico e caratterizzato da forti outlier.
     \item \textbf{Teen Mental Health Dataset}, piccolo e fortemente sbilanciato;
     \item \textbf{Adult Income Dataset}, più grande e con numerose variabili categoriche;
-    \item \textbf{Liver Patient Dataset}, piccolo, clinico e caratterizzato da forti outlier.
+
 \end{enumerate}
 
 Le variabili categoriche vengono codificate con one-hot encoding.\\
@@ -82,7 +83,7 @@ Il rumore viene applicato diversamene in base al tipo di feature:
     in cui \( \mathrm{std}(X_{\cdot j}) \) rappresenta la deviazione standard empirica della colonna considerata. Questo rende il rumore adattivo alla scala della variabile, evitando distorsioni non proporzionate.
     \item \textbf{Variabili intere e ordinali}:  In questo caso, scegliamo una variazione locale da applicare, ad esempio, -2, -1, 0, 1, 2, e il risultato viene mantenuto entro limiti espliciti.
 \end{itemize}
-    Come valore di \texttt{noise\_level}, dopo aver sperimentato con diveersi valori, abbiamo scelto di usare 0.5.
+    Come valore di \texttt{noise\_level}, dopo aver sperimentato con diversi valori, abbiamo scelto di usare 0.5.
 
 
     Come metodo di applicazione, le feature sono state ordinate in base al valore di Mutual Information rispetto alla variabile target e successivamente suddivise in due gruppi: il primo contenente le feature con Mutual Information più elevata e il secondo quelle con valori inferiori. Il rumore è stato applicato separatamente a ciascun gruppo, mantenendo inalterato l'altro, al fine di valutare come la perturbazione delle feature più o meno informative influenzi le prestazioni del modello.
@@ -111,7 +112,7 @@ Indicando con TP, TN, FP e FN gli elementi della matrice di confusione, vengono 
 \subsubsection{Decision Tree}
 
 Il primo modello che abbiamo preso in considerazione è il Decision Tree, in quanto dà risultati interpretabili e ottiene una elevata velocità di addestramento e inferenza.\\
-Per contenere l'overfitting abbiamo introdotto due meccanismi principali:
+Per contenere l'overfitting abbiamo introdotto tre meccanismi principali:
 \begin{itemize}
     \item Il primo è la limitazione della profondità massima tramite il parametro \texttt{max\_depth}, che ne limita la complessità;
     \item Il secondo è il \textit{cost-complexity pruning}, che penalizza la complessità strutturale dell'albero introducendo il parametro $\alpha$ nella funzione obiettivo:
@@ -134,7 +135,7 @@ Ogni configurazione produce un ensemble di tre alberi. Ciascun albero viene adde
 Il secondo modello addestrato per ciascun dataset è una rete neurale, scelta per la sua capacità di apprendere rappresentazioni complesse dei dati e modellare relazioni non lineari tra le variabili.\\
 Per la fase di normalizzazione è stato utilizzato \texttt{RobustScaler()} (dalla libreria \texttt{sklearn}), ritenuto più adatto alla struttura dei dataset rispetto ad altri metodi di scaling come \texttt{StandardScaler()}. A differenza della standardizzazione basata su media e deviazione standard, \texttt{RobustScaler} utilizza la mediana e l'intervallo interquartile (IQR), risultando meno sensibile alla presenza di valori anomali (\textit{outlier}).\\
 Per le reti abbiamo usato la libreria \texttt{tensorflow} e  \texttt{keras}.\\
-La funzione \texttt{build\_model(input\_dim)} si occupa della costruzione della rete neurale, definendo un'architettura composta da tre livelli densi con rispettivamente 32, 16 e 1 neurone. L'ultimo livello è il singolo neurone di output, e utilizza una funzione di attivazione sigmoide, poiché i dataset affrontano un problema di classificazione binaria e l'output rappresenta una probabilità compresa tra 0 e 1.\\
+La funzione \texttt{build\_model\_NN} si occupa della costruzione della rete neurale, definendo un'architettura composta da tre livelli densi con rispettivamente 32, 16 e 1 neurone. L'ultimo livello è il singolo neurone di output, e utilizza una funzione di attivazione sigmoide, poiché i dataset affrontano un problema di classificazione binaria e l'output rappresenta una probabilità compresa tra 0 e 1.\\
 Nei test progressivi vengono usati:
 \begin{itemize}
     \item bootstrap del training per diversificare i modelli;
@@ -150,9 +151,9 @@ Nei test progressivi vengono usati:
 Il terzo modello utilizzato per ciascun dataset è una Support Vector Machine (SVM). Abbiamo deciso di adottare il kernel RBF (Radial Basis Function), che consente al modello di proiettare implicitamente i dati in uno spazio di dimensione superiore, rendendo possibile la separazione anche in presenza di relazioni non lineari tra le variabili.\\
 Per la normalizzazione dei dati è stato utilizzato nuovamente RobustScaler().
 L'implementazione è stata realizzata tramite la libreria \texttt{scikit-learn}, utilizzando la classe \texttt{SVC}. 
-Il modello è stato configurato con il parametro \texttt{class\_weight = "balanced"}, al fine di compensare eventuali squilibri tra le classi e ridurre il rischio di bias verso la classe maggioritaria, soprattutto in condizioni di elevato rumore nei dati. Inoltre, è stato utilizzato \texttt{gamma = "scale"}, che imposta il valore di gamma a
+Il modello è stato configurato con il parametro \texttt{class\_weight = "balanced"}, al fine di compensare eventuali squilibri tra le classi e ridurre il rischio di bias verso la classe maggioritaria. Inoltre, è stato utilizzato \texttt{gamma = "scale"}, che imposta il valore di gamma a
 \[
-\frac{1}{n_{\text{features}} \cdot X.\mathrm{var}()}
+\frac{1}{n_{\text{features}} \cdot X.\mathrm{var}()},
 \]
 e \texttt{C = 1} come parametro di regolarizzazione.
 Per ciascun livello di rumore vengono costruiti tre modelli su campioni bootstrap. La predizione finale è ottenuta mediante voto di maggioranza sulle classi predette.
@@ -678,7 +679,7 @@ Per ogni modello, abbiamo sporcato progressivamente il dataset e monitorato le p
 \newpage
 \section{Adult Income Dataset}
 
-Il dataset vuole mostrare come il reddito annuo di un individuo dipende da diversi fattori. In modo intuitivo, è influenzato dal livello di istruzione, dall’età, dal genere, dall’occupazione e così via.
+Il dataset vuole mostrare come il reddito annuo di un individuo dipende da diversi fattori. In modo intuitivo, è influenzato dal livello di istruzione, dall’età, dall’occupazione e così via.
 
 \subsection{Descrizione dataset}
 Il dataset è composto da \textbf{15 colonne} e \textbf{48842 righe}.
@@ -709,11 +710,12 @@ income & Variabile target (reddito annuo) \\
 \end{tabular}
 \end{table}
 
+In quanto ridondante con ‘educational-num’, abbiamo rimosso la feature ‘education’.\\
 La distribuzione del target è: \textbf{76\% $\geq$ 50K, 24\% $<$ 50K}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{Immagini/Adult/DistribuzioneTargetAdult.png}
+    \includegraphics[width=0.65\linewidth]{Immagini/Adult/DistribuzioneTargetAdult.png}
     \label{fig:DistribuzioneTargetAdult}
 \end{figure}
 
@@ -922,7 +924,7 @@ Dalla Mutual Information, otteniamo le 2 metà di feature:
 \section{Analisi dei Risultati}
 
 Analizzando i vari output dei modelli, notiamo che, in generale, sporcare le feature migliori porta a una maggiore instabilità dei risultati rispetto a sporcare le feature peggiori.\\
-Inoltre, in media, sporcare le feature migliori porta a risultati peggiori rispetto allo sporcare feature migliori.
+Inoltre, in media, sporcare le feature migliori porta a risultati peggiori rispetto allo sporcare feature peggiori.
 
 \begin{figure}[ht]
     \centering
@@ -1042,11 +1044,11 @@ In questo progetto abbiamo analizzato come il rumore influisca sull’addestrame
 
 
 con 3 dataset differenti.
-Abbiamo mostrato i vari risultati ottenuti e fatto qualche confronto degno di nota.
+Abbiamo mostrato i vari risultati ottenuti e fatto qualche confronto rilevante.
 \par
 Ulteriori esperimenti potrebbero concentrarsi sul confronto dei risultati ottenuti su dataset di dimensioni simili, così da valutare l'effetto del rumore indipendentemente dalla dimensione del dataset.\\
 Inoltre, sarebbe interessante estendere l'analisi ad altri modelli di machine learning per verificarne il comportamento in presenza di rumore. \\
-Si potrebbero testare anche diverse modalità di applicazione del rumore, al fine di individuare le strategie più efficaci.\\
+Si potrebbero testare anche diverse modalità di applicazione del rumore, al fine di individuare strategie diverse.\\
 Infine, si potrebbero testare altre misure per l’importanza delle feature per ottenere gruppi di feature da sporcare insieme.
 
 
